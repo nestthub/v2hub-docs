@@ -1,0 +1,16 @@
+[project]
+site_name = "V2Hub Documentation"
+site_description = "Official documentation for the V2Hub developer ecosystem."
+site_url = "https://v2hub.dev"
+
+repo_url = "https://github.com/nestthub/v2hub-docs"
+
+nav = [
+    { "Home" = "index.md" },
+]
+
+[project.theme]
+variant = "modern"
+
+[[project.theme.palette]]
+scheme = "slate"
