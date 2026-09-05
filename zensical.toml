@@ -7,6 +7,17 @@ repo_url = "https://github.com/nestthub/v2hub-docs"
 
 nav = [
     { "Home" = "index.md" },
+    { "V2Hub" = [
+        { "Overview" = "v2hub/index.md" },
+        { "Installation & Setup" = "v2hub/installation.md" },
+        { "Sync & Async Clients" = "v2hub/clients.md" },
+        { "Requests & Responses" = "v2hub/requests-responses.md" },
+        { "Typed Models" = "v2hub/models.md" },
+        { "Error Handling" = "v2hub/errors.md" },
+        { "Retries & Circuit Breaker" = "v2hub/retries.md" },
+        { "Usage Examples" = "v2hub/examples.md" },
+        { "API Reference" = "v2hub/reference.md" },
+    ] },
 ]
 
 [project.theme]
