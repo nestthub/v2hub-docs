@@ -9,6 +9,7 @@ extra_css = ["assets/extra.css"]
 
 nav = [
     { "Home" = "index.md" },
+    { "Getting Started" = "getting-started/index.md"},
     { "V2Hub" = [
         { "Overview" = "v2hub/index.md" },
         { "Installation & Setup" = "v2hub/installation.md" },
