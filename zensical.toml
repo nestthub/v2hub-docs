@@ -18,6 +18,18 @@ nav = [
         { "Usage Examples" = "v2hub/examples.md" },
         { "API Reference" = "v2hub/reference.md" },
     ] },
+    { "V2Hub CLI" = [
+        { "Overview" = "v2hub-cli/index.md" },
+        { "Installation" = "v2hub-cli/installation.md" },
+        { "Configuration & Authentication" = "v2hub-cli/configuration.md" },
+        { "Shell Autocompletion" = "v2hub-cli/autocompletion.md" },
+        { "Subscription Commands" = "v2hub-cli/subscription-commands.md" },
+        { "Connection Commands" = "v2hub-cli/connection-commands.md" },
+        { "Provider Commands" = "v2hub-cli/provider-commands.md" },
+        { "Admin Commands" = "v2hub-cli/admin-commands.md" },
+        { "Common Workflows & Examples" = "v2hub-cli/examples.md" },
+        { "Command Reference" = "v2hub-cli/reference.md" },
+    ] },
 ]
 
 [project.theme]
