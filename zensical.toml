@@ -21,6 +21,18 @@ nav = [
         { "Usage Examples" = "v2hub/examples.md" },
         { "API Reference" = "v2hub/reference.md" },
     ] },
+    { "V2Hub Admin" = [
+        { "Overview" = "v2hub-admin/index.md" },
+        { "Installation & Setup" = "v2hub-admin/installation.md" },
+        { "Authentication & Authorization" = "v2hub-admin/authentication.md" },
+        { "User Management" = "v2hub-admin/user-management.md" },
+        { "Provider Management" = "v2hub-admin/provider-management.md" },
+        { "Provider Authorization" = "v2hub-admin/provider-authorization.md" },
+        { "IP Bans & Whitelist" = "v2hub-admin/ip-bans-and-whitelist.md" },
+        { "Usage Statistics" = "v2hub-admin/usage-statistics.md" },
+        { "Integration Examples" = "v2hub-admin/examples.md" },
+        { "API Reference" = "v2hub-admin/reference.md" },
+    ] },
     { "V2Hub CLI" = [
         { "Overview" = "v2hub-cli/index.md" },
         { "Installation" = "v2hub-cli/installation.md" },
