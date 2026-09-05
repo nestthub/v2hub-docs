@@ -5,6 +5,8 @@ site_url = "https://v2hub.dev"
 
 repo_url = "https://github.com/nestthub/v2hub-docs"
 
+extra_css = ["assets/extra.css"]
+
 nav = [
     { "Home" = "index.md" },
     { "V2Hub" = [
@@ -34,9 +36,27 @@ nav = [
 
 [project.theme]
 variant = "modern"
+logo = "images/logo.svg"
+favicon = "images/logo.svg"
+features = [
+    "navigation.tabs",
+    "navigation.tabs.sticky",
+    "navigation.indexes",
+    "navigation.top",
+    "navigation.footer",
+    "content.code.copy",
+    "content.tooltips",
+    "content.action.edit",
+]
+
+[project.theme.font]
+text = "Inter"
+code = "JetBrains Mono"
 
 [[project.theme.palette]]
 scheme = "slate"
+primary = "black"
+accent = "indigo"
 
 [project.extra]
 generator = false

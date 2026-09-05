@@ -1,0 +1,295 @@
+/*
+  V2Hub Documentation — visual identity layer
+  ============================================
+  Loaded after the built-in Zensical stylesheet, so every rule here is an
+  additive refinement on top of the "modern" variant + slate palette.
+  Only documented CSS custom properties (--md-*) and stable structural
+  classes are used, so this degrades safely if the underlying theme
+  changes. Logo, favicon, and the dark color scheme itself are configured
+  separately in zensical.toml and are intentionally left untouched here.
+*/
+
+/* -------------------------------------------------------------------- */
+/* Color palette                                                        */
+/* -------------------------------------------------------------------- */
+
+:root {
+  /* Slightly deeper, more technical background than the stock slate
+     scheme, with a bit more separation between surface levels. */
+  --md-default-bg-color: hsla(220, 20%, 9%, 1);
+  --md-default-bg-color--light: hsla(220, 18%, 9%, 0.7);
+  --md-default-bg-color--lighter: hsla(220, 18%, 9%, 0.3);
+  --md-default-bg-color--lightest: hsla(220, 18%, 9%, 0.07);
+
+  --md-default-fg-color: hsla(210, 15%, 92%, 1);
+  --md-default-fg-color--light: hsla(210, 15%, 92%, 0.7);
+  --md-default-fg-color--lighter: hsla(210, 15%, 92%, 0.45);
+  --md-default-fg-color--lightest: hsla(210, 15%, 92%, 0.12);
+
+  /* Code surfaces get a touch more contrast from the page background so
+     inline code and fenced blocks read clearly at a glance. */
+  --md-code-bg-color: hsla(220, 20%, 13%, 1);
+  --md-code-bg-color--light: hsla(220, 20%, 13%, 0.7);
+  --md-code-bg-color--lighter: hsla(220, 20%, 13%, 0.4);
+  --md-code-fg-color: hsla(210, 12%, 88%, 1);
+
+  /* Links and interactive accents. */
+  --md-typeset-a-color: var(--md-accent-fg-color);
+  --md-accent-fg-color: #7c9cff;
+  --md-accent-fg-color--transparent: #7c9cff1a;
+  --md-accent-bg-color: #ffffff;
+  --md-accent-bg-color--light: #ffffffb3;
+}
+
+/* -------------------------------------------------------------------- */
+/* Typography                                                           */
+/* -------------------------------------------------------------------- */
+
+.md-typeset {
+  font-size: 0.76rem;
+  line-height: 1.65;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25em;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2em;
+  padding-top: 0.4em;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: var(--md-text-font-family);
+}
+
+/* A little extra breathing room between paragraphs and lists so dense
+   API reference pages stay scannable. */
+.md-typeset p,
+.md-typeset ul,
+.md-typeset ol {
+  margin-bottom: 0.9em;
+}
+
+/* Table headers in slightly muted caps for a more technical feel. */
+.md-typeset table:not([class]) th {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--md-default-fg-color--light);
+}
+
+/* -------------------------------------------------------------------- */
+/* Links                                                                */
+/* -------------------------------------------------------------------- */
+
+.md-typeset a {
+  text-decoration-line: underline;
+  text-decoration-color: var(--md-accent-fg-color--transparent);
+  text-underline-offset: 0.2em;
+  transition: color 125ms, text-decoration-color 125ms;
+}
+
+.md-typeset a:hover,
+.md-typeset a:focus-visible {
+  text-decoration-color: var(--md-accent-fg-color);
+}
+
+/* Don't underline links that are really just icon/logo affordances. */
+.md-header a,
+.md-footer a,
+.md-nav a {
+  text-decoration: none;
+}
+
+/* -------------------------------------------------------------------- */
+/* Navigation                                                           */
+/* -------------------------------------------------------------------- */
+
+.md-nav__title {
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--lighter);
+}
+
+.md-nav__link {
+  transition: color 125ms;
+}
+
+.md-nav__link--active,
+.md-nav__link:active {
+  font-weight: 600;
+}
+
+/* Give the sticky tab bar a subtle bottom hairline so it reads as a
+   distinct band rather than floating over the content. */
+.md-tabs {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-tabs__link {
+  font-size: 0.7rem;
+  font-weight: 500;
+  opacity: 0.75;
+  transition: opacity 125ms;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  opacity: 1;
+}
+
+/* -------------------------------------------------------------------- */
+/* Code blocks                                                          */
+/* -------------------------------------------------------------------- */
+
+.md-typeset code {
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+}
+
+.md-typeset pre {
+  border-radius: 0.5rem;
+}
+
+.md-typeset pre > code {
+  border-radius: 0.5rem;
+}
+
+/* Slim, unobtrusive top border on fenced code blocks to separate them
+   from surrounding prose without a heavy card look. */
+.md-typeset .highlight {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+}
+
+.md-typeset .highlight pre {
+  border: none;
+}
+
+/* Copy button stays subtle until hovered. */
+.md-clipboard {
+  opacity: 0.6;
+  transition: opacity 125ms;
+}
+
+.md-clipboard:hover,
+.md-clipboard:focus-visible {
+  opacity: 1;
+}
+
+/* -------------------------------------------------------------------- */
+/* Footer                                                               */
+/* -------------------------------------------------------------------- */
+
+.md-footer {
+  margin-top: 2rem;
+}
+
+.md-footer-meta {
+  background-color: var(--md-default-bg-color--lightest);
+}
+
+.md-footer__link {
+  transition: opacity 125ms;
+}
+
+.md-footer__link:hover {
+  opacity: 0.85;
+}
+
+.md-copyright {
+  font-size: 0.68rem;
+  opacity: 0.7;
+}
+
+/* -------------------------------------------------------------------- */
+/* General UI polish                                                    */
+/* -------------------------------------------------------------------- */
+
+/* Slightly rounder corners on interactive surfaces throughout, to match
+   the softer, modern feel of the rest of the theme. */
+.md-search__form,
+.md-search__output,
+.md-tooltip,
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0.5rem;
+}
+
+/* Admonitions get a touch more left emphasis and consistent spacing. */
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0 0 0 0.2rem;
+}
+
+/* Buttons (e.g. "Get started →" links styled as buttons in docs/index.md
+   via the .md-button class from admonition-free callouts) get a crisper
+   hover state. */
+.md-typeset .md-button {
+  border-radius: 0.4rem;
+  transition: transform 125ms, opacity 125ms;
+}
+
+.md-typeset .md-button:hover {
+  transform: translateY(-1px);
+}
+
+/* -------------------------------------------------------------------- */
+/* Responsive layout                                                    */
+/* -------------------------------------------------------------------- */
+
+/* Tighten the content measure slightly on very wide screens so long-form
+   pages (reference tables, code) stay comfortable to read. */
+@media screen and (min-width: 100em) {
+  .md-grid {
+    max-width: 64rem;
+  }
+}
+
+/* On small screens, reduce heading/paragraph spacing a bit so pages
+   don't feel overly sparse on a phone-sized viewport. */
+@media screen and (max-width: 44.9375em) {
+  .md-typeset h1 {
+    font-size: 1.5rem;
+  }
+
+  .md-typeset h2 {
+    font-size: 1.2rem;
+    margin-top: 1.5em;
+  }
+
+  .md-typeset {
+    font-size: 0.72rem;
+  }
+
+  .md-footer__link .md-footer__title {
+    max-width: 60vw;
+  }
+}
+
+/* Ensure wide tables (common in the API reference pages) scroll within
+   their own container instead of breaking the page layout on mobile. */
+.md-typeset__scrollwrap {
+  margin: 1em 0;
+}
+
+.md-typeset__table {
+  min-width: 100%;
+}
