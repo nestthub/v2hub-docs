@@ -1,6 +1,6 @@
 [project]
 name = "v2hub-docs"
-version = "0.0.1"
+version = "1.1.0"
 description = "Official documentation for the V2Hub developer ecosystem."
 requires-python = ">=3.11"
 dependencies = []
