@@ -9,7 +9,7 @@ extra_css = ["assets/extra.css"]
 
 nav = [
     { "Home" = "index.md" },
-    { "Getting Started" = "getting-started/index.md"},
+    { "Getting Started" = "getting-started/index.md" },
     { "V2Hub" = [
         { "Overview" = "v2hub/index.md" },
         { "Installation & Setup" = "v2hub/installation.md" },
@@ -45,6 +45,19 @@ nav = [
         { "Common Workflows & Examples" = "v2hub-cli/examples.md" },
         { "Command Reference" = "v2hub-cli/reference.md" },
     ] },
+    { "Guides" = [
+        { "Client Integration" = "guides/client-integration.md" },
+        { "Authentication Workflows" = "guides/authentication.md" },
+        { "Subscriptions Workflows" = "guides/subscriptions.md" },
+        { "Providers Workflows" = "guides/providers.md" },
+        { "Administration Workflows" = "guides/administration.md" },
+        { "CLI Workflows" = "guides/cli-workflows.md" },
+        { "Error Handling Patterns" = "guides/error-handling.md" },
+        { "Common Integration Patterns" = "guides/integration-patterns.md" },
+        { "Production Usage" = "guides/production.md" },
+        { "End-to-End Examples" = "guides/end-to-end-examples.md" },
+    ] },
+
 ]
 
 [project.theme]
